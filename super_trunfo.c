@@ -40,9 +40,10 @@ int main () {
     nomeDaCidade1[50], // Nome da primeira cidade
     nomeDaCidade2[50]; // Nome da segunda cidade
 
-    int populacao1, // Populacao da primeira cidade
-    populacao2, // Populacao da segunda cidade
-    pontosTuristicos1, // Pontos turisticos da primeira cidade
+    unsigned long int populacao1, // Populacao da primeira cidade
+    populacao2; // Populacao da segunda cidade
+
+    int pontosTuristicos1, // Pontos turisticos da primeira cidade
     pontosTuristicos2; // Pontos turisticos da segunda cidade
 
     float area1, // Area da primeira cidade
@@ -66,19 +67,19 @@ int main () {
 
     // População
     printf("Digite a quantidade populacional da cidade: \n");
-    scanf("%d", &populacao1);
+    scanf(" %d", &populacao1);
 
     // Área
     printf("Digite a área da cidade em km²: \n");
-    scanf("%f", &area1);
+    scanf(" %f", &area1);
 
     // PIB
     printf("Digite o PIB da cidade em R$: \n");
-    scanf("%f", &PIB1);
+    scanf(" %f", &PIB1);
 
     // Pontos Turísticos
     printf("Digite a quantidade de pontos turísticos da cidade: \n");
-    scanf("%d", &pontosTuristicos1);
+    scanf(" %d", &pontosTuristicos1);
 
     // ------------------------------------------------------------------------------- //
 
@@ -96,19 +97,19 @@ int main () {
 
     // População
     printf("Digite a quantidade populacional da cidade: \n");
-    scanf("%d", &populacao2);
+    scanf(" %d", &populacao2);
 
     // Área
     printf("Digite a área da cidade em km²: \n");
-    scanf("%f", &area2);
+    scanf(" %f", &area2);
 
     // PIB
     printf("Digite o PIB da cidade em R$: \n");
-    scanf("%f", &PIB2);
+    scanf(" %f", &PIB2);
 
     // Pontos Turísticos
     printf("Digite a quantidade de pontos turísticos da cidade: \n");
-    scanf("%d", &pontosTuristicos2);
+    scanf(" %d", &pontosTuristicos2);
 
     // ------------------------------------------------------------------------------- //
 
@@ -121,34 +122,54 @@ int main () {
     float PIBPerCapita1 = PIB1 / populacao1, // PIB per capita da primeira cidade
     PIBPerCapita2 = PIB2 / populacao2; // PIB per capita da segunda cidade
 
-    // ------------------------------------------------------------------------------- //
+    // Calculo do SUPER PORDER!
 
+    float superpoder1 = populacao1 + area1 + PIB1 + pontosTuristicos1 + ( 1 / DensidadePopulacional1) + PIBPerCapita1, // super poder da primeira cidade
+    superpoder2 = populacao2 + area2 + PIB2 + pontosTuristicos2 + ( 1 / DensidadePopulacional2) + PIBPerCapita2; // super poder da segunda cidade
+    
+    // Comparação das cartas
+    int resultadoSuperpoder = superpoder1 > superpoder2, // Resultado FINAL
+    resultadoPopulacao = populacao1 > populacao2, // Resultado da População
+    resultadoArea = area1 > area2, // Resultado da Área
+    resultadoPIB = PIB1 > PIB2, // Resultado do PIB
+    resultadoDensidadePopulacional = DensidadePopulacional1 > DensidadePopulacional2, // Resultado da Densidade Populacional
+    resultadoPIBPerCapita = PIBPerCapita1 > PIBPerCapita2, // Resultado do PIB per Capita
+    resultadoPontosTuristicos = pontosTuristicos1 > pontosTuristicos2; // Resultado dos Pontos Turísticos
+
+    // ------------------------------------------------------------------------------- //
     // Impressão da primeira carta
-    printf("%s\n", nomeCarta1);
+    printf("\n\n%s\n", nomeCarta1);
     printf("Estado: %c\n", estado1);
     printf("Codigo: %c%s\n", estado1, codigo1);
     printf("Nome da Cidade: %s\n", nomeDaCidade1);
-    printf("População: %d\n", populacao1);
-    printf("Área: %.2f\n km²", area1);
-    printf("PIB: %.2f\n bilhões de reais", PIB1);
-    printf("Número de Pontos Turísticos: %d\n", pontosTuristicos1);
-    printf("Densidade Populacional: %.2f\n hab/km²", DensidadePopulacional1);
-    printf("PIB per Capita: %.2f\n reais", PIBPerCapita1);
-
+    printf("População: %u, Resultado: %d\n", populacao1, resultadoPopulacao);
+    printf("Área: %.2f km², Resultado: %d\n", area1, resultadoArea);
+    printf("PIB: %.2f bilhões de reais, Resultado: %d\n", PIB1, resultadoPIB);
+    printf("Número de Pontos Turísticos: %d, Resultado: %d\n", pontosTuristicos1, resultadoPontosTuristicos);
+    printf("Densidade Populacional: %.2f hab/km², Resultado: %d\n", DensidadePopulacional1, resultadoDensidadePopulacional);
+    printf("PIB per Capita: %.2freais, Resultado: %d\n", PIBPerCapita1, resultadoPIBPerCapita);
+    printf("Superpoder: %.2f, Resultado: %d\n", superpoder1, resultadoSuperpoder);
 
     // ------------------------------------------------------------------------------- //
 
     // Impressão da primeira carta
-    printf("%s\n", nomeCarta2);
+    printf("\n\n%s\n", nomeCarta2);
     printf("Estado: %c\n", estado2);
     printf("Codigo: %c%s\n", estado2, codigo2);
     printf("Nome da Cidade: %s\n", nomeDaCidade2);
-    printf("População: %d\n", populacao2);
-    printf("Área: %.2f\n km²", area2);
-    printf("PIB: %.2f\n bilhões de reais", PIB2);
-    printf("Número de Pontos Turísticos: %d\n", pontosTuristicos2);
-    printf("Densidade Populacional: %.2f\n hab/km²", DensidadePopulacional2);
-    printf("PIB per Capita: %.2f\n reais", PIBPerCapita2);
+    printf("População: %u, Resultado: %d\n", populacao2, resultadoPopulacao);
+    printf("Área: %.2f, Resultado: %d km²\n", area2, resultadoArea);
+    printf("PIB: %.2f, Resultado: %d bilhões de reais\n", PIB2, resultadoPIB);
+    printf("Número de Pontos Turísticos: %d, Resultado: %d\n", pontosTuristicos2, resultadoPontosTuristicos);
+    printf("Densidade Populacional: %.2f hab/km², Resultado: %d\n", DensidadePopulacional2, resultadoDensidadePopulacional);
+    printf("PIB per Capita: %.2f reais, Resultado: %d\n", PIBPerCapita2, resultadoPIBPerCapita);
+    printf("Superpoder: %.2f, Resultado: %d\n", superpoder2, resultadoSuperpoder);
+
+    // ------------------------------------------------------------------------------- //
+
+    // Resultado final
+    printf("\n\n\n1 = Primeira carta vencedora\n0 = Segunda carta vencedora\n");
+    printf("Carta Vencedora: %d", resultadoSuperpoder);
 
     // ------------------------------------------------------------------------------- //
 
