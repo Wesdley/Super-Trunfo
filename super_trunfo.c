@@ -177,26 +177,93 @@ int main () {
 
     // ------------------------------------------------------------------------------- //
     // Menu para comparar as cartas
+    // int resultado1, resultado2, resultado3, ataque1, ataque2, defesa1, defesa2, recuo1, recuo2;
+    // ataque1 = rand() % 100 + 1; // Ataque da primeira carta
+    // ataque2 = rand() % 100 + 1; // Ataque da segunda carta
+    // defesa1 = rand() % 100 + 1; // Defesa da primeira carta
+    // defesa2 = rand() % 100 + 1; // Defesa da segunda carta
+    // recuo1 = rand() % 100 + 1; // Recuo da primeira carta
+    // recuo2 = rand() % 100 + 1; // Recuo da segunda carta
 
+
+    // inicio das comparações
+    int opcao1, opcao2, resultado1, resultado2; // inicialização do menu e salvamento de pontos
+    float soma1, soma2; // soma dos pontos
     while(1)
     {
+        /* int primeiroAtributo, segundoAtributo, continuar;
+        printf("\n\n==================== ATRIBUTOS DAS CARTAS ====================\n");
+        printf("Escolha o primeiro atributo da carta: \n");
+        printf("1. Ataque\n");
+        printf("2. Defesa\n");
+        printf("3. Recuo\n");
+        scanf("%d", &primeiroAtributo);
+
+        switch (primeiroAtributo)
+        {
+        case 1:
+            resultado1 = (ataque1 > ataque2) ? 1 : 0;
+            break;
+        case 2:
+            resultado1 = (defesa1 > defesa2) ? 1 : 0;
+            break;
+        case 3:
+            resultado1 = (recuo1 > recuo2) ? 1 : 0;
+            break;
+        default:
+            printf("Opção inválida! Tente novamente.\n");
+            continuar; // Volta para o início do loop
+            break;
+        }
+
+         printf("\n\n==================== ATRIBUTOS DAS CARTAS ====================\n");
+        printf("ATENÇÃO: Escolha um atributo diferente do primeiro!\n");
+        printf("Escolha o Segundo atributo da carta: \n");
+        printf("1. Ataque\n");
+        printf("2. Defesa\n");
+        printf("3. Recuo\n");
+        scanf("%d", &segundoAtributo);
+
+        // Comparação do segundo atributo para evitar que o jogador escolha o mesmo atributo
     
-        int opcao; // inicialização do menu
+        if (primeiroAtributo == segundoAtributo) {
+            printf("Escolha uma opção diferente!\n");
+            continuar; // Volta para o início do loop
+        } else {
+            switch (segundoAtributo)
+            {
+            case 1:
+                resultado2 = (ataque1 > ataque2) ? 1 : 0;
+                break;
+            case 2:
+                resultado2 = (defesa1 > defesa2) ? 1 : 0;
+                break;
+            case 3:
+                resultado2 = (recuo1 > recuo2) ? 1 : 0;
+                break;
+            default:
+                printf("Opção inválida! Tente novamente.\n");
+                continuar; // Volta para o início do loop
+                break;
+            }
+        } */
+        
+        
         printf("\n\n==================== MENU ====================\n\n");
-        printf("Qual atributo deseja comparar?\n");
+        printf("Selecione o primeiro atributo para comparar:\n");
         printf("1 = População\n2 = Área\n3 = PIB\n4 = Pontos Turísticos\n5 = Densidade Populacional\n6 = PIB per Capita\n7 = Superpoder\n8 = Regras\n0 = Sair do Game\n");
         printf("Escolha uma opção: ");
-        scanf("%d", &opcao);
+        scanf("%d", &opcao1);
 
-        if (opcao == 0) {
+        if (opcao1 == 0) {
             printf("\n\n==================== Saindo do Game ====================\n\n");
             break;
         }
         
-        switch (opcao) // Switch para escolher qual atributo deseja comparar
+        switch (opcao1) // Switch para escolher qual atributo deseja comparar
         {
-        case 1:
-            if (populacao1 > populacao2) {
+            case 1:
+            /*if (populacao1 > populacao2) {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nA Primeira Carta foi a Vencedora: %lu habitantes\n", populacao1);
             } else if (populacao2 > populacao1) {
@@ -205,10 +272,13 @@ int main () {
             } else {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nAs Cartas Empataram\nPrimeira Carta: %lu habitantes\nSegunda Carta: %lu habitantes\n", populacao1, populacao2);
-            }
-        break;
-        case 2:
-            if (area1 > area2) {
+            }*/
+                resultado1 = (populacao1 > populacao2) ? 1 : 0;
+                soma1 = populacao1;
+                soma2 = populacao2;
+                break;
+            case 2:
+            /* if (area1 > area2) {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nA Primeira Carta foi a Vencedora: %.2f km²\n", area1);
             } else if (area2 > area1) {
@@ -217,10 +287,14 @@ int main () {
             } else {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nAs Cartas Empataram\nPrimeira Carta: %.2f km²\nSegunda Carta: %.2f km²\n", area1, area2);
-            }
-        break;
-        case 3:
-            if (PIB1 > PIB2) {
+            } */
+
+                resultado1 = (area1 > area2) ? 1 : 0;
+                soma1 = area1;
+                soma2 = area2;
+                break;
+            case 3:
+            /* if (PIB1 > PIB2) {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nA Primeira Carta foi a Vencedora: %.2f de reais\n", PIB1);
             } else if (PIB2 > PIB1) {
@@ -229,10 +303,14 @@ int main () {
             } else {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nAs Cartas Empataram\nPrimeira Carta: %.2f de reais\nSegunda Carta: %.2f de reais\n", PIB1, PIB2);
-            }
-        break;
-        case 4:
-            if (pontosTuristicos1 > pontosTuristicos2) {
+            } */
+
+                resultado1 = (PIB1 > PIB2) ? 1 : 0;
+                soma1 = PIB1;
+                soma2 = PIB2;
+                break;
+            case 4:
+            /* if (pontosTuristicos1 > pontosTuristicos2) {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nA Primeira Carta foi a Vencedora: %d pontos\n", pontosTuristicos1);
             } else if (pontosTuristicos2 > pontosTuristicos1) {
@@ -241,10 +319,14 @@ int main () {
             } else {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nAs Cartas Empataram\nPrimeira Carta: %d pontos\nSegunda Carta: %d pontos\n", pontosTuristicos1, pontosTuristicos2);
-            }
-        break;
-        case 5:
-            if (DensidadePopulacional1 < DensidadePopulacional2) {
+            } */
+
+                resultado1 = (pontosTuristicos1 > pontosTuristicos2) ? 1 : 0;
+                soma1 = pontosTuristicos1;
+                soma2 = pontosTuristicos2;
+                break;
+            case 5:
+           /*  if (DensidadePopulacional1 < DensidadePopulacional2) {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nA Primeira Carta foi a Vencedora: %.2f habitantes por km²\n", DensidadePopulacional1);
             } else if (DensidadePopulacional2 < DensidadePopulacional1) {
@@ -253,10 +335,14 @@ int main () {
             } else {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nAs Cartas Empataram\nPrimeira Carta: %.2f habitantes por km²\nSegunda Carta: %.2f habitantes por km²\n", DensidadePopulacional1, DensidadePopulacional2);
-            }
-        break;
-        case 6:
-            if (PIBPerCapita1 > PIBPerCapita2) {
+            } */
+
+                resultado1 = (DensidadePopulacional1 < DensidadePopulacional2) ? 1 : 0;
+                soma1 = DensidadePopulacional1;
+                soma2 = DensidadePopulacional2;
+                break;
+            case 6:
+            /* if (PIBPerCapita1 > PIBPerCapita2) {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nA Primeira Carta foi a Vencedora: %.2f de reais\n", PIBPerCapita1);
             } else if (PIBPerCapita2 > PIBPerCapita1) {
@@ -265,10 +351,14 @@ int main () {
             } else {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nAs Cartas Empataram\nPrimeira Carta: %.2f de reais\nSegunda Carta: %.2f de reais\n", PIBPerCapita1, PIBPerCapita2);
-            }
-        break;
-        case 7:
-            if (superpoder1 > superpoder2) {
+            } */
+
+                resultado1 = (PIBPerCapita1 > PIBPerCapita2) ? 1 : 0;
+                soma1 = PIBPerCapita1;
+                soma2 = PIBPerCapita2;
+                break;
+            case 7:
+            /* if (superpoder1 > superpoder2) {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nA Primeira Carta foi a Vencedora: %.2f de Super Poder!\n", superpoder1);
             } else if (superpoder2 > superpoder1) {
@@ -277,20 +367,101 @@ int main () {
             } else {
                 printf("\n==================== RESULTADO FINAL ====================\n");
                 printf("\n\nAs Cartas Empataram\nPrimeira Carta: %.2f de Super Poder!\nSegunda Carta: %.2f de Super Poder!\n", superpoder1, superpoder2);
-            }
-        break;
-        case 8:
-            printf("\n\n==================== REGRAS ====================\n");
-            printf("\nRegras de Comparação: A regra geral é: vence a carta com o maior valor no atributo escolhido. Porém, para a Densidade Demográfica, a regra inverte: vence a carta com o menor valor.");
-        break;
-        default:
-            if (opcao < 1 || opcao > 7) {
+            } */
+
+                resultado1 = (superpoder1 > superpoder2) ? 1 : 0;
+                soma1 = superpoder1;
+                soma2 = superpoder2;
+                break;
+            case 8:
+                printf("\n\n==================== REGRAS ====================\n");
+                printf("\nRegras de Comparação: A regra geral é: vence a carta com o maior valor no atributo escolhido. Porém, para a Densidade Demográfica, a regra inverte: vence a carta com o menor valor.");
+                break;
+            default:
+            if (opcao1 < 0|| opcao1 > 8) {
                 printf("Opção inválida!");
             }
-        break;
+            break;
         }
 
-    // ------------------------------------------------------------------------------- //
-}
+        printf("\n\n==================== MENU ====================\n\n");
+        printf("Selecione o segundo atributo para comparar:\n");
+        printf("ATENÇÃO: Escolha um atributo diferente do primeiro!\n");
+        printf("1 = População\n2 = Área\n3 = PIB\n4 = Pontos Turísticos\n5 = Densidade Populacional\n6 = PIB per Capita\n7 = Superpoder\n8 = Regras\n0 = Sair do Game\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao2);
+
+        if (opcao2 == 0) {
+            printf("\n\n==================== Saindo do Game ====================\n\n");
+            break;
+        }
+
+        if (opcao1 == opcao2) {
+            printf("\n\nEscolha uma opção diferente!\n");
+            continue; // Volta para o início do loop
+        } else {
+            switch (opcao2)
+            {
+                case 1:
+                    resultado2 = (populacao1 > populacao2) ? 1 : 0;
+                    soma1 = soma1 + populacao1;
+                    soma2 = soma2 + populacao2;
+                    break;
+                case 2:
+                    resultado2 = (area1 > area2) ? 1 : 0;
+                    soma1 = soma1 + area1;
+                    soma2 = soma2 + area2;
+                    break;
+                case 3:
+                    resultado2 = (PIB1 > PIB2) ? 1 : 0;
+                    soma1 = soma1 + PIB1;
+                    soma2 = soma2 + PIB2;
+                    break;
+                case 4:
+                    resultado2 = (pontosTuristicos1 > pontosTuristicos2) ? 1 : 0;
+                    soma1 = soma1 + pontosTuristicos1;
+                    soma2 = soma2 + pontosTuristicos2;
+                    break;
+                case 5:
+                    resultado2 = (DensidadePopulacional1 < DensidadePopulacional2) ? 1 : 0;
+                    soma1 = soma1 + DensidadePopulacional1;
+                    soma2 = soma2 + DensidadePopulacional2;
+                    break;
+                case 6:
+                    resultado2 = (PIBPerCapita1 > PIBPerCapita2) ?  1 : 0;
+                    soma1 = soma1 + PIBPerCapita1;
+                    soma2 = soma2 + PIBPerCapita2;
+                    break;
+                case 7:
+                    resultado2 = (superpoder1 > superpoder2) ? 1 : 0;
+                    soma1 = soma1 + superpoder1;
+                    soma2 = soma2 + superpoder2;
+                    break;
+                case 8:
+                    printf("\n\n==================== REGRAS ====================\n");
+                    printf("\nRegras de Comparação: A regra geral é: vence a carta com o maior valor no atributo escolhido. Porém, para a Densidade Demográfica, a regra inverte: vence a carta com o menor valor.");
+                    break;
+                default:
+                    if (opcao2 < 0|| opcao2 > 8) {
+                        printf("Opção inválida!");
+                    }
+                    break;
+            }
+        }
+
+        if (soma1 > soma2) {
+            printf("\n\nParabéns! A primeira carta venceu!\n");
+        } else if (soma1 < soma2) {
+            printf("\n\nParabéns! A segunda carta venceu!\n");
+        } else {
+            printf("\n\nEmpate!\n");
+        }
+
+        printf("\nPontuação Final:\nPrimeira Carta: %.2f\nSegunda Carta: %.2f\n", soma1, soma2);
+        break; // Encerra o loop após uma comparação
+        // ------------------------------------------------------------------------------- //  
+    }
+    // fim while
     return 0;
+    // jogo quimera
 }
